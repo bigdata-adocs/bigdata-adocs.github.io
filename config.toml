@@ -1,7 +1,8 @@
 baseURL = 'http://bigdata-adocs.github.io/'
 title = "ADoCS 2022"
 
-theme = "fuji"
+#theme = "fuji"
+theme = "PaperMod"
 hasCJKLanguage = true
 enableEmoji = true
 enableRobotsTXT = true

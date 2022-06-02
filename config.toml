@@ -1,0 +1,6 @@
+baseURL = 'http://bigdata-adocs.github.io/'
+languageCode = 'en-us'
+title = 'Digital Twins for Accelerated Discovery of Climate and Sustainability'
+theme = "fuji"
+[params]
+	Subtitle = 'BigData 2022 workshop, December 16, Osaka, Japan'

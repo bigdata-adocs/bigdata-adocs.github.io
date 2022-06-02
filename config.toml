@@ -1,97 +1,153 @@
 baseURL = 'http://bigdata-adocs.github.io/'
-languageCode = 'en-us'
-title = 'Digital Twins for Accelerated Discovery of Climate and Sustainability'
-#theme = "hugo-universal-theme"
+title = "ADoCS 2022"
+
 theme = "fuji"
-builddrafts = false
-relativeURLs = true
-canonifyURLs = true
-
-contentdir = "content"
-layoutdir = "layouts"
-publishdir = "public"
-
-author = "Michiaki Tatsubori"
-
-## Hugo Built-in Features
-disqusShortname = "https-shenoybr-github-io-hugo-goa-demo" # Comment out to disable Disqus.
-googleAnalytics = "XYZ"
+hasCJKLanguage = true
+enableEmoji = true
 enableRobotsTXT = true
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
 
-## Site Settings
+## Change this two to switch between different language
+languageCode = "en"           # For RSS, view https://www.rssboard.org/rss-language-codes
+defaultContentLanguage = "en" # For HTML page, now support: en, zh-hans, zh-hant, ja, nl, pl, it
+
+summaryLength = 100 # Custom summary length, add <!--more--> in post file to custom split point
+paginate = 10
+
+# googleAnalytics = "UA-000000000-0" # Set your Google Analytics UA here
+
+[outputFormats]
+[outputFormats.SearchIndex]
+isPlainText = true
+notAlternative = true
+mediaType = "application/json"
+path = "/search/"
+
+[outputs]
+home = ["HTML", "RSS", "SearchIndex"]
+
+[permalinks]
+post = "/:section/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
+
 [params]
-	Subtitle = 'BigData 2022 workshop, December 16, Osaka, Japan'
-	intro = "Startup Guru Extraordinaire"
-	dateformat = "Jan 2, 2006"
+author = "Michiaki Tatsubori"                # You can also set author in post front matter individually
+subTitle = "IEEE Bigdata 2022 workshop on digital twins for accelerated discovery of climate and sustainability"
+defaultTheme = "auto"              # default theme when first visit (auto|dark|light)
 
-## Site Meta Settings
-[params.meta]
-description = "Simple minimalist theme"
-keywords = "minimalist,blog,goa,hugo,developer"
+# Source URL of the website, will appear in the footer
+sourceURL = "https://github.com/bigdata-adocs/bigdata-adocs.github.io"
 
-## Social Accounts
-[params.social]
-github = "<username>"
-instagram = "<username>"
-xing = "<username>"
-linkedin = "<username>"
-twitter = "<username>"
-facebook = "<username>"
-google = "<username>"
-googlescholar = "<account_id>"
-stackoverflow = "<username>"
-lastfm = "<username>"
-goodreads = "<username>"
-gitlab = "<username>"
-bitbucket = "<username>"
-fivehundredpx = "<username>"
-flickr = "<username>"
-foursquare = "<username>"
-hackernews = "<username>"
-kickstarter = "<username>"
-patreon = "<username>"
-pintrest = "<username>"
-steam = "<username>"
-reddit = "<username>"
-snapchat = "<username>"
-youtube = "<channelid>"
-keybase = "<username>"
-twitch = "<username>"
-soundcloud = "<username>"
-tumblr = "<username>"
-strava = "<username>"
-skype = "<username>"
-telegram = "<username>"
-whatsapp = "<username>"
-email = "you@example.com"
-pgp = "<key_fingerprint>"
+# Use CloudFlare Workers to accelerate the Google Analytics
+# If you are using this please comment the googleAnalytics above
+# Check https://github.com/SukkaW/cloudflare-workers-async-google-analytics for more details
+# googleAnalyticsTid = "UA-000000000-0"
+# googleAnalyticsRoute = "https://*.*.workers.dev/"
 
-## Extras
-[params.extra]
-poweredby = true
-highlightjs = true
-socialmarkup = true
-toc = true
-displayrssicon = true
+# Google AdSense
+# The AdSense code will be inserted between the head tags of your site.
+# googleAdsense = "0000000000000000"
 
-## Main Menu
-[[menu.main]]
-    name = "blog"
-    weight = 100
-    identifier = "blog"
-    url = "/blog/"
-[[menu.main]]
-    name = "about"
-    identifier = "about"
-    weight = 200
-    url = "/about/"
-[[menu.main]]
-    name = "coderag"
-    identifier = "coderag"
-    weight = 300
-    url = "/coderag/"
+# Word counter and read time indicator in post metadata
+showWordCounter = true
+showReadTime = false
+
+# License in the footer
+showLicenseInFooter = false
+
+# License at the end of each post
+showLicense = true
+showToc = true
+
+# Copyright
+copyrightStartYear = "2022"
+
+# Open Graph & Twitter Card variables
+# You can also set description and images in post front matter individually
+description = "The portal for ADoCS 2022, IEEE Bigdata 2022 workshop on digital twins for accelerated discovery of climate and sustainability."
+og = "/img/og.png"                                          # This will use the image called og.png in static/img folder
+
+# Posts shown in homepage
+mainSections = ["posts"]
+
+# Bangumi image chart id
+# bgmImageChart = "000000"
+
+# License
+license = "CC BY 4.0"
+licenseLink = "http://creativecommons.org/licenses/by/4.0/"
+
+# Comments
+# utterances, see: https://utteranc.es/
+# utterancesRepo = "*/*"
+# utterancesIssueTerm = "pathname"
+
+# Disqus, see: https://disqus.com/admin/install/platforms/universalcode/
+# disqusShortname = "*********"
+# Also use DisqusJS for accessing from Mainland China, see: https://github.com/SukkaW/DisqusJS
+# If you want to set multiple api key, see theme's README for more details
+# disqusJSApi = "https://*********/"
+# disqusJSApikey = "**********"
+
+# custom lazyload placeholder
+# 16:9
+lazyPlaceholder = "/assets/lazyload/dsrca_loading_480x270.svg"
+# 32:9
+lazyPlaceholderRow = "/assets/lazyload/dsrca_loading_960x270.svg"
+# 8:9
+lazyPlaceholderCol = "/assets/lazyload/dsrca_loading_480x540.svg"
+
+# Let images display in full brightness under dark mode
+# disableDarkImage = true
+
+[markup]
+	defaultMarkdownHandler = 'goldmark'
+#[markup.goldmark]
+#[markup.goldmark.renderer]
+#unsafe = true # Enable user to embed HTML snippets in Markdown content
+#[markup.highlight]
+#codeFences = false # Disable Hugo's code highlighter
+
+#[markup.tableOfContents]
+#startLevel = 2
+#endLevel = 3
+
+[taxonomies]
+tag = "tags"
+
+[menu]
+[[menu.nav]]
+name = "Home"
+url = "/"
+weight = 1
+[[menu.nav]]
+name = "CFP"
+url = "/cfp/"
+weight = 2
+[[menu.nav]]
+name = "About"
+url = "/about/"
+weight = 3
+[[menu.nav]]
+name = "Search"
+url = "/search/"
+weight = 4
+[[menu.nav]]
+name = "RSS"
+url = "/index.xml"
+weight = 5
 
 [[menu.link]]
 name = "IEEE BigData 2022"
 url = "https://bigdataieee.org/BigData2022/"
+weight = 1
+[[menu.link]]
+name = "Twitter"
+url = "https://twitter.com/tatsubori"
 weight = 2
+
+[build]
+noJSConfigInAssets = true
+
+[security]
+enableInlineShortcodes = true
